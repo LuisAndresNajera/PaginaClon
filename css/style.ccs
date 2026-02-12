@@ -1,0 +1,266 @@
+/* --- RESET Y CONFIGURACIÓN BÁSICA --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* --- SECCIÓN HERO (LA PORTADA) --- */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Degradado oscuro + Imagen de fondo de Netflix */
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.9) 100%), 
+                      url('https://assets.nflxext.com/ffe/siteui/vlv3/f841d4c7-10e1-40af-bca1-07583908f1a5/63539169-f10e-4309-847e-402919866440/MX-es-20220502-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* BARRA DE NAVEGACIÓN */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 10%;
+    z-index: 10;
+}
+
+.logo {
+    width: 150px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.lang-btn {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: 1px solid #777;
+    padding: 5px 15px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.signin-btn {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 7px 17px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* CONTENIDO CENTRAL DEL HERO */
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    z-index: 5;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    max-width: 800px;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.hero-content h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+/* FORMULARIO DE EMAIL */
+.email-form {
+    display: flex;
+    width: 100%;
+    max-width: 700px;
+    gap: 10px;
+}
+
+.email-form input {
+    flex: 1;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #555;
+    color: white;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+.btn-get-started {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 0 30px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.btn-get-started:hover {
+    background-color: #f40612;
+}
+
+/* --- SECCIÓN TENDENCIAS (CON LOS NÚMEROS) --- */
+.trends-section {
+    padding: 50px 10%;
+    background-color: #000;
+}
+
+.promo-banner {
+    background: linear-gradient(90deg, #13132b 0%, #1c1c3d 100%);
+    padding: 20px 30px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    border: 1px solid #222;
+}
+
+.promo-text {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.promo-text span {
+    color: #b3b3b3;
+    font-size: 0.9rem;
+}
+
+.btn-more-info {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+/* CONTENEDOR DE CARTAS CON NÚMEROS */
+.trends-container {
+    display: flex;
+    gap: 45px;
+    overflow-x: auto;
+    padding: 20px 0 40px 20px;
+    scrollbar-width: none;
+}
+
+.trends-container::-webkit-scrollbar {
+    display: none;
+}
+
+.movie-card {
+    position: relative;
+    min-width: 160px;
+    height: 240px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    position: relative;
+    z-index: 2;
+}
+
+/* LOS NÚMEROS GIGANTES DETRÁS */
+.rank-number {
+    position: absolute;
+    left: -35px;
+    bottom: -25px;
+    font-size: 11rem;
+    font-weight: 900;
+    color: #000;
+    /* Efecto de borde gris en el número */
+    -webkit-text-stroke: 2px #555;
+    z-index: 1;
+    line-height: 1;
+    user-select: none;
+}
+
+/* --- SECCIÓN MOTIVOS PARA UNIRTE --- */
+.reasons-section {
+    padding: 0 10% 80px;
+    background-color: #000;
+}
+
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.reason-card {
+    background: linear-gradient(135deg, #0f101e 0%, #17192e 100%);
+    padding: 25px;
+    border-radius: 15px;
+    min-height: 220px;
+}
+
+.reason-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.reason-card p {
+    color: #b3b3b3;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* --- RESPONSIVIDAD (MÓVILES) --- */
+@media (max-width: 768px) {
+    .navbar { padding: 20px 5%; }
+    .logo { width: 100px; }
+    .hero-content h1 { font-size: 2rem; }
+    .hero-content h2 { font-size: 1.2rem; }
+    .email-form { flex-direction: column; }
+    .btn-get-started { padding: 15px; font-size: 1.2rem; justify-content: center; }
+    .rank-number { font-size: 8rem; left: -25px; }
+}
